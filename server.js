@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 const express = require('express')
 const app = express()
 
-const db = require("./database.js")
+const db = require("./database.cjs")
 
 const args = require('minimist')(process.argv.slice(2))
 
@@ -15,6 +15,9 @@ const port = args['port'] || 5555
 const debug = args['debug'] || false
 
 const log = args['log'] || true
+
+const fs = require('fs')
+const morgan = require('morgan')
 
 const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',port))
