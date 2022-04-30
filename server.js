@@ -33,7 +33,6 @@ if (args.help || args.h) {
 
 // port default to 5555
 const port = args.port || process.env.PORT || 5555;
-const debug = (args.debug == "true");
 const log = (args.log != "false");
 
 app.use(express.json())
@@ -68,7 +67,7 @@ app.use((req, res, next) => {
     next();
 })
 
-if (debug) {
+if (args.debug) {
     app.get('/app/log/access', (req, res) => {
         try {
             const stmt = db.prepare(`SELECT * FROM accesslog`).all();
