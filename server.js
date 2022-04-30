@@ -32,7 +32,7 @@ if (args.help || args.h) {
 }
 
 // port default to 5555
-const port = args.port || process.env.PORT || 5000;
+const port = args.port || process.env.PORT || 5555;
 const debug = (args.debug == "true");
 const log = (args.log != "false");
 
