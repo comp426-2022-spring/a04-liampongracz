@@ -107,7 +107,7 @@ app.get('/app/flip/', (req, res) => {
     const flipResult = {"flip" : ans};
     res.json(flipResult);
 });
-
+ 
 app.get('/app/flips/:number', (req, res) => {
     res.status(200);
     const flips = req.params.number || 1;
